@@ -39,4 +39,26 @@
 // user input for initials
 // save score and initials to local server
 
-var countdownTimer = 
+var countdownTimer = document.querySelector(".countdown-number");
+var startButton = document.querySelector(".start-button");
+var question = document.querySelector(".question");
+var score = document.querySelector(".score");
+var answerOne = document.querySelector(".guess0");
+var answerTwo = document.querySelector(".guess1");
+var answerThree = document.querySelector(".guess2");
+var answerFour = document.querySelector(".guess3");
+var progress = document.querySelector(".progress");
+
+var questions = [];
+var answers1 = [];
+var answers2 = [];
+var answers3 = [];
+var answers4 = [];
+var isTrue
+var isFlase
+var gameOverWin
+var gameOverLose
+
+var nameInitials
+var saveScore //will be time remaining
+var previousScore
