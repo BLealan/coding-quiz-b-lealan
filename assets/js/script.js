@@ -62,3 +62,9 @@ var gameOverLose
 var nameInitials
 var saveScore //will be time remaining
 var previousScore
+
+addEventListener("click", startButton);{
+    setInterval(function(){
+        countdownTimer --;
+    },1000);
+}
