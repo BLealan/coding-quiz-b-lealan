@@ -48,7 +48,8 @@ var choiceOne = document.querySelector("#guess0");
 var choiceTwo = document.querySelector("#guess1");
 var choiceThree = document.querySelector("#guess2");
 var choiceFour = document.querySelector("#guess3");
-var progress = document.querySelector(".progress");
+var nameInitials = document.querySelector(".initial")
+var score = document.querySelector(".score")
 
 var listOfQuestions = [
     "In JavaScript how do you declare a variable?",
@@ -66,7 +67,7 @@ var gameOverWin
 var gameOverLose
 
 var countdownTimer = 0;
-var nameInitials
+
 var saveScore //will be time remaining
 var previousScore
 
@@ -100,6 +101,7 @@ function displayQuestion4(){
     choiceFour.textContent = answer4[3];
 }
 startButton.addEventListener("click", function(){
+    startButton.disabled = true;
     countdownTimer = 60;
     var timer = setInterval(function(){
     countdownTimer--;
@@ -107,7 +109,10 @@ startButton.addEventListener("click", function(){
 
     if(countdownTimer === 0){
         clearInterval(timer);
-        countdownMessage.textContent = "Time's up!"
+        countdownMessage.textContent = "Time's up!";
+        startButton.disabled = false;
+        var name = prompt("Please enter your initals:");
+        nameInitials = name;
     }
 
     },1000);
