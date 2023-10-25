@@ -40,6 +40,7 @@
 // save score and initials to local server
 
 var countdownTimer = document.querySelector(".countdown-number");
+var countdownMessage = document.querySelector(".countdown-text");
 var startButton = document.querySelector(".start-button");
 var question = document.querySelector(".question");
 var score = document.querySelector(".score");
@@ -63,8 +64,10 @@ var nameInitials
 var saveScore //will be time remaining
 var previousScore
 
-addEventListener("click", startButton);{
-    setInterval(function(){
-        countdownTimer --;
+startButton.addEventListener("click", function(){
+    countdownTimer = 60;
+    var timer = setInterval(function(){
+    countdownTimer--;
+    countdownMessage.textContent = countdownTimer + " seconds to go!"
     },1000);
-}
+});
