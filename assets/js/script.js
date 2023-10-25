@@ -50,9 +50,9 @@ var answerThree = document.querySelector(".guess2");
 var answerFour = document.querySelector(".guess3");
 var progress = document.querySelector(".progress");
 
-var questions = [];
-var answers1 = [];
-var answers2 = [];
+var questions = ["In JavaScript how do you declare a variable?", "What is an array?", "Which comparitve operator equates to values AND data not being equal?"];
+var answers1 = ["var =", "var:", "var -", "var()"];
+var answers2 = ["A way to campare values", "A list of data", "Inline styling", "An aqautic creature"];
 var answers3 = [];
 var answers4 = [];
 var isTrue
@@ -69,5 +69,12 @@ startButton.addEventListener("click", function(){
     var timer = setInterval(function(){
     countdownTimer--;
     countdownMessage.textContent = countdownTimer + " seconds to go!"
+
+    if(countdownTimer === 0){
+        clearInterval(timer);
+        countdownMessage.textContent = "Time's up!"
+    }
+    
     },1000);
 });
+
