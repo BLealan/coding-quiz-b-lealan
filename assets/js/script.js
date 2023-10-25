@@ -42,7 +42,7 @@
 var countdownTimer = document.querySelector(".countdown-number");
 var countdownMessage = document.querySelector(".countdown-text");
 var startButton = document.querySelector(".start-button");
-var question = document.querySelector(".question");
+var questionEl = document.querySelector("#question");
 var score = document.querySelector(".score");
 var answerOne = document.querySelector(".guess0");
 var answerTwo = document.querySelector(".guess1");
@@ -50,7 +50,10 @@ var answerThree = document.querySelector(".guess2");
 var answerFour = document.querySelector(".guess3");
 var progress = document.querySelector(".progress");
 
-var questions = ["In JavaScript how do you declare a variable?", "What is an array?", "Which comparitve operator equates to values AND data not being equal?"];
+var listOfQuestions = [
+    "In JavaScript how do you declare a variable?",
+    "What is an array?",
+    "Which comparitve operator equates to values AND data not being equal?"];
 var answers1 = ["var =", "var:", "var -", "var()"];
 var answers2 = ["A way to campare values", "A list of data", "Inline styling", "An aqautic creature"];
 var answers3 = [];
@@ -64,6 +67,10 @@ var nameInitials
 var saveScore //will be time remaining
 var previousScore
 
+function displayQuestion(){
+    questionEl.textContent = listOfQuestions[0];
+}
+
 startButton.addEventListener("click", function(){
     countdownTimer = 60;
     var timer = setInterval(function(){
@@ -74,7 +81,9 @@ startButton.addEventListener("click", function(){
         clearInterval(timer);
         countdownMessage.textContent = "Time's up!"
     }
-    
+
     },1000);
 });
+
+startButton.addEventListener("click", displayQuestion);
 
