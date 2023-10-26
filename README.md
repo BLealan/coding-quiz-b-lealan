@@ -8,8 +8,11 @@ Starting with the variables, I ensured that HTML elements that would be required
 
 When the timer reaches 0 a prompt appears for the user to input their initials to be saved to local storage.
 
-These were the elements I was successfully able to implement. However, due to work scheduling this week I was left with less time to work on this project. The next steps included:
+These were the elements I was successfully able to implement. However, due to scheduling from my employer this week I was left with less time to work on this project than needed. The next steps included:
 
+- making a "for loop" to iterate through each question
+- checking for correct answers to progress question/incorrect answers would minus time from counter
+- styling green/red for correct/incorrect answers respectively
 - recalling the saved initials and score from the local device to display on the page
 
 ## Usage
@@ -20,7 +23,10 @@ Below is a link to the live site and screenshots of the page showing it deployed
 ![Screenshot 1](./assets/images/Screenshot-1.png)
 ![Screenshot 2](./assets/images/Screenshot-2.png)
 ![Screenshot 3](./assets/images/Screenshot-3.png)
+![Screenshot 4](./assets/images/Screenshot-4.png)
 
 ## Credits
 
 - https://codepen.io/jasonchan/pen/wMaEwN
+- https://www.w3schools.com/
+- https://developer.mozilla.org/en-US/

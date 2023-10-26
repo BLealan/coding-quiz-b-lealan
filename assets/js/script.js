@@ -49,6 +49,7 @@ var isTrue;
 var isFlase;
 
 var countdownTimer = 0;
+var currentRound = 0;
 
 var nameInitials = null;
 var score = 0;
@@ -119,7 +120,17 @@ startButton.addEventListener("click", function(){
 
 startButton.addEventListener("click", displayQuestion1);
 
-// init();
+// function playQuiz(){
+//     for(var i = 0; i < listOfQuestions.length; i++){
+//         if (currentRound === 0){
+//             displayQuestion1();
+//             currentRound++;
+//         } else if (currentRound === ){
+//             displayQuestion2();
+//             currentRound++;
+//         } else if (currentRound === )
+//     }
+// }
 
 //functions to input data from local storage onto the page
 // function getPlayer(){
@@ -141,3 +152,5 @@ startButton.addEventListener("click", displayQuestion1);
 //     }
 //     score.textContent = score;
 // }
+
+// init();
