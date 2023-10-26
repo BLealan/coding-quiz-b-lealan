@@ -6,7 +6,11 @@ The task was to create a multiple choice quiz for users to test their coding kno
 
 Starting with the variables, I ensured that HTML elements that would be required to manipulate were available to JavaScript. The initialising event would be the click of the "start button" so, an eventListener would register this, start the timer countdown and disaply the first question. While the quiz was in progress this start button was disabled, as otherwise it would restart the timer!
 
-When the timer reaches 0 a prompt appears for the user to input their initials to be saved to local storage. 
+When the timer reaches 0 a prompt appears for the user to input their initials to be saved to local storage.
+
+These were the elements I was successfully able to implement. However, due to work scheduling this week I was left with less time to work on this project. The next steps included:
+
+- recalling the saved initials and score from the local device to display on the page
 
 ## Usage
 

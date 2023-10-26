@@ -1,28 +1,12 @@
-// GIVEN I am taking a code quiz
-// WHEN I click the start button
-
-// user clicks start button
-// listen event for click of start button
-
-// THEN a timer starts and I am presented with a question
-
-//timer starts at 60s
-// timed event displayed start at 60s
-//first question displayed
-// add question text to HTML
-// add answer options to HTML
-
 // WHEN I answer a question
 
 // user clicks on correct answer
 // answer colour changes to green
 
 // THEN I am presented with another question
-
 // next question is disaplyed in HTML
 
 // WHEN I answer a question incorrectly
-
 // user selects incorrect answer
 // answer stays as red
 
@@ -43,7 +27,6 @@ var countdownTimer = document.querySelector(".countdown-number");
 var countdownMessage = document.querySelector(".countdown-text");
 var startButton = document.querySelector(".start-button");
 var questionEl = document.querySelector("#question");
-var score = document.querySelector(".score");
 var choiceOne = document.querySelector("#guess0");
 var choiceTwo = document.querySelector("#guess1");
 var choiceThree = document.querySelector("#guess2");
@@ -64,18 +47,19 @@ var answer4 = ["data:input", "name:code", "key:value", "content:expression"];
 
 var isTrue;
 var isFlase;
-var gameOverWin;
-var gameOverLose;
 
 var countdownTimer = 0;
 
-var nameInitials = "";
+var nameInitials = null;
 var score = 0;
-var previousScore;
+var topPlayer;
+var topScore;
 
-localStorage.setItem("player", JSON.stringify(name));
+localStorage.setItem("player", JSON.stringify(nameInitials));
 localStorage.setItem("Score", JSON.stringify(score));
 
+
+//functions to change questions/answers on screen
 function displayQuestion1(){
     questionEl.textContent = listOfQuestions[0];
     choiceOne.textContent = answer1[0];
@@ -106,6 +90,13 @@ function displayQuestion4(){
     choiceFour.textContent = answer4[3];
 }
 
+//Calls data saved to local storage before game starts
+// function init(){
+//     getPlayer();
+//     getScore();
+// }
+
+//Start button click triggers start of timer
 startButton.addEventListener("click", function(){
     startButton.disabled = true;
     countdownTimer = 60;
@@ -119,6 +110,7 @@ startButton.addEventListener("click", function(){
         countdownMessage.textContent = "Time's up!";
         startButton.disabled = false;
         nameInitials = prompt("Please enter your initals:");
+        localStorage.setItem("player", JSON.stringify(nameInitials));
     }
 
     },1000);
@@ -127,4 +119,25 @@ startButton.addEventListener("click", function(){
 
 startButton.addEventListener("click", displayQuestion1);
 
-console.log(nameInitials);
+// init();
+
+//functions to input data from local storage onto the page
+// function getPlayer(){
+//     var storedPlayer = localStorage.getItem("player");
+//     if (storedPlayer === null) {
+//         topPlayer = "Looks like you're the first player!"
+//     } else {
+//         topPlayer = storedPlayer;
+//     }
+//     nameInitials.textContent = storedPlayer;
+// }
+
+// function getScore(){
+//     var storedScore = localStorage.getItem("score");
+//     if (storedScore === null) {
+//         topScore = 0;
+//     } else {
+//         score = storedScore;
+//     }
+//     score.textContent = score;
+// }
