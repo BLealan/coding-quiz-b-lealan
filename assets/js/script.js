@@ -48,8 +48,8 @@ var choiceOne = document.querySelector("#guess0");
 var choiceTwo = document.querySelector("#guess1");
 var choiceThree = document.querySelector("#guess2");
 var choiceFour = document.querySelector("#guess3");
-var nameInitials = document.querySelector(".initial")
-var score = document.querySelector(".score")
+var nameInitials = document.querySelector(".initial");
+var score = document.querySelector(".score");
 
 var listOfQuestions = [
     "In JavaScript how do you declare a variable?",
@@ -61,15 +61,20 @@ var correctAnswer = "var =";
 var answer2 = ["A way to campare values", "A list of data", "Inline styling", "An aqautic creature"];
 var answer3 = ["!==", "!", "¡!", "=!="];
 var answer4 = ["data:input", "name:code", "key:value", "content:expression"];
-var isTrue
-var isFlase
-var gameOverWin
-var gameOverLose
+
+var isTrue;
+var isFlase;
+var gameOverWin;
+var gameOverLose;
 
 var countdownTimer = 0;
 
-var saveScore //will be time remaining
-var previousScore
+var nameInitials = "";
+var score = 0;
+var previousScore;
+
+localStorage.setItem("player", JSON.stringify(name));
+localStorage.setItem("Score", JSON.stringify(score));
 
 function displayQuestion1(){
     questionEl.textContent = listOfQuestions[0];
@@ -100,19 +105,20 @@ function displayQuestion4(){
     choiceThree.textContent = answer4[2];
     choiceFour.textContent = answer4[3];
 }
+
 startButton.addEventListener("click", function(){
     startButton.disabled = true;
     countdownTimer = 60;
     var timer = setInterval(function(){
     countdownTimer--;
-    countdownMessage.textContent = countdownTimer + " seconds to go!"
+    countdownMessage.textContent = countdownTimer + " seconds to go!";
+
 
     if(countdownTimer === 0){
         clearInterval(timer);
         countdownMessage.textContent = "Time's up!";
         startButton.disabled = false;
-        var name = prompt("Please enter your initals:");
-        nameInitials = name;
+        nameInitials = prompt("Please enter your initals:");
     }
 
     },1000);
@@ -120,3 +126,5 @@ startButton.addEventListener("click", function(){
 });
 
 startButton.addEventListener("click", displayQuestion1);
+
+console.log(nameInitials);
